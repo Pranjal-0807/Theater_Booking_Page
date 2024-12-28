@@ -1,10 +1,13 @@
 import React from "react";
+import SeatBookingPage from "./pages/SeatBookingPage";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Theater Booking Page</h1>
-    </div>
+    <Provider store={store}>
+      <SeatBookingPage />
+    </Provider>
   );
 };
 

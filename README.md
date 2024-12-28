@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Theater Booking Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## SeatBookingPage
 
-## Available Scripts
+- Includes three components
 
-In the project directory, you can run:
+### ToggleTheme Component
 
-### `npm start`
+- Button Component
+  - Passing a function to toggle the theme
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### SeatView Component
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Used the `Array.from` method to create an array of 90 seats to display on the UI using `map`.
 
-### `npm test`
+- Created to view seats.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### BookingAction Component
 
-### `npm run build`
+- Includes four components:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - BookingDetails
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    - Heading Component
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+      - Showing Title
 
-### `npm run eject`
+    - SeatPrice Component
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+      - Write the logic for calculating the price based on the seat location
+      - Paragraph Component
+        - Showing Total Price
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    - Paragraph Component
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+      - Showing the seat numbers of selected seats
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    - Paragraph Component
+      - Showing the seat numbers of booked seats
 
-## Learn More
+  - ConfirmBooking
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    - Button Component
+      - Passing a dispatch to confirm booking
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  - ResetSelectedSeats
 
-### Code Splitting
+    - Button Component
+      - Passing a dispatch to reset selected seats
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  - ResetBookedSeats
 
-### Analyzing the Bundle Size
+    - Button Component
+      - Passing a dispatch to reset selected seats
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Setup Redux
 
-### Making a Progressive Web App
+- store.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  - configured store
+  - imported slices and used them in reducer
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - created slices
+    - seatSlice.js
+      - Created reducers for tasks like selecting seats, confirm booking, reset seats
+    - themeSlice.js
+      - Created reducer for toggling theme
